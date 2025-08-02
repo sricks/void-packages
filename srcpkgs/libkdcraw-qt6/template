@@ -1,6 +1,6 @@
 # Template file for 'libkdcraw-qt6'
 pkgname=libkdcraw-qt6
-version=24.08.0
+version=25.04.2
 revision=1
 build_style=cmake
 configure_args="-DQT_MAJOR_VERSION=6"
@@ -12,7 +12,7 @@ maintainer="Luciogi <githubvoidlinux.supremacy429@passinbox.com>"
 license="GPL-2.0-or-later"
 homepage="https://www.kde.org/applications/graphics/"
 distfiles="${KDE_SITE}/release-service/${version}/src/libkdcraw-${version}.tar.xz"
-checksum=b64b7f094296be4e689f4846c8d3ac82f93dc30cbd92ccbf62b65596e88625c2
+checksum=de7bc44d0437a0dca94a1005360b96b00da4ffc501f513eff466c3eb2755fd8a
 
 libkdcraw-qt6-devel_package() {
 	depends="${sourcepkg}>=${version}_${revision}"

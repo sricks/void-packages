@@ -1,18 +1,17 @@
 # Template file for 'mise'
 pkgname=mise
-version=2024.10.13
+version=2025.7.1
 revision=1
 build_style=cargo
-make_check_args="-- --skip cli --skip runtime_symlinks::tests::test_list_symlinks"
-hostmakedepends="pkg-config libgit2-1.8-devel"
-makedepends="openssl-devel libgit2-1.8-devel libzstd-devel"
+hostmakedepends="pkg-config"
+makedepends="openssl-devel libzstd-devel bzip2-devel"
 short_desc="Polyglot runtime manager (asdf rust clone)"
 maintainer="Daniel Lewan <daniel@teddydd.me>"
 license="MIT"
 homepage="https://github.com/jdx/mise"
 changelog="https://github.com/jdx/mise/releases"
 distfiles="https://github.com/jdx/mise/archive/v${version}.tar.gz>${pkgname}-${version}.tar.gz"
-checksum=e25023b573dbf8f2df2a5fb6372ad82bcf2a2abff6b1f5ceb1922c936099a3a4
+checksum=744235ded50ef72598b26a5cea7ca16d9d526be410ccffe19b9011e22fca46a5
 
 post_install() {
 	vlicense LICENSE
@@ -26,5 +25,5 @@ post_install() {
 rtx_package() {
 	depends="${sourcepkg}>=${version}_${revision}"
 	short_desc+=" (transitional dummy package)"
-	build_style=meta
+	metapackage=yes
 }

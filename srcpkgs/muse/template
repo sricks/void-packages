@@ -1,7 +1,7 @@
 # Template file for 'muse'
 pkgname=muse
 version=4.1.0
-revision=4
+revision=5
 build_wrksrc=src
 build_style=cmake
 build_helper=qmake
@@ -14,7 +14,7 @@ makedepends="$(vopt_if alsa alsa-lib-devel) dssi-devel fluidsynth-devel
  $(vopt_if python python3-devel)"
 depends="desktop-file-utils qt5-svg $(vopt_if python 'python3-six python3-Pyro4')"
 short_desc="MIDI/Audio sequencer with recording and editing capabilities"
-maintainer="Evgeny Ermakov <evgeny.v.ermakov@gmail.com>"
+maintainer="Orphaned <orphan@voidlinux.org>"
 license="GPL-2.0-or-later"
 homepage="https://muse-sequencer.github.io"
 distfiles="https://github.com/muse-sequencer/muse/archive/${version/pre/-pre}.tar.gz"
@@ -23,3 +23,8 @@ python_version=3
 
 build_options="alsa python"
 build_options_default="alsa python"
+
+pre_build() {
+	# For some reason, this target doesn't automatically build on musl
+	ninja ${makejobs} -C build muse/mplugins/ui_midifilter.h
+}

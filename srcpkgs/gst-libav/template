@@ -1,6 +1,6 @@
 # Template file for 'gst-libav'
 pkgname=gst-libav
-version=1.24.6
+version=1.26.2
 revision=1
 build_style=meson
 hostmakedepends="pkg-config yasm"
@@ -12,7 +12,7 @@ license="LGPL-2.0-or-later"
 homepage="https://gstreamer.freedesktop.org"
 changelog="https://gstreamer.freedesktop.org/releases/${version%.*}/#${version}"
 distfiles="https://gstreamer.freedesktop.org/src/gst-libav/gst-libav-${version}.tar.xz"
-checksum=4bbd08481a390f907e342aa3f25ab885c80ec0a53f3b14244cf733cc8622f2bf
+checksum=2eceba9cae4c495bb4ea134c27f010356036f1fa1972db5f54833f5f6c9f8db0
 
 case "$XBPS_TARGET_MACHINE" in
 	*-musl) # Required by musl for M_SQRT1_2
