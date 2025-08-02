@@ -18,6 +18,7 @@
 !/etc
 !/srcpkgs
 !/xbps-src
+!/update-brave.sh
 etc/conf
 etc/conf.*
 etc/virtual
